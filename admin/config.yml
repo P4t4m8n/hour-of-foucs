@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main # The branch where edits should be committed
+
+media_folder: "images/uploads" # Where images uploaded via CMS are saved in your repo
+public_folder: "/images/uploads" # URL from which the images are served
+
+collections:
+  - name: "faq"
+    label: "FAQ"
+    folder: "content/faq" # A folder in your repo where FAQ entries (Markdown files) are stored
+    create: true # Allow users to create new FAQ entries
+    slug: "{{slug}}"
+    fields:
+      - { label: "Question", name: "title", widget: "string" }
+      - { label: "Answer", name: "body", widget: "markdown" }
